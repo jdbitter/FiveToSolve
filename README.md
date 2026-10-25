@@ -1,16 +1,35 @@
-# React + Vite
+# Five To Solve
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Wordle-inspired word guessing game built with React. Guess the hidden five-letter word in five attempts or fewer.
 
-Currently, two official plugins are available:
+**[Play Five To Solve](https://fivetosolve.vercel.app/)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Color-coded feedback for each guess
+- Physical and on-screen keyboard support
+- Animated tile reveals
+- Word definitions displayed at the end of each game
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Built With
 
-## Expanding the ESLint configuration
+- React
+- JavaScript
+- CSS
+- Vite
+- Vercel
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting Started
+
+Requires [Node.js](https://nodejs.org/) and npm.
+
+```bash
+git clone https://github.com/jdbitter/FiveToSolve
+cd five-to-solve
+npm install
+npm run dev
+```
+
+## Deployment
+
+Deployed with Vercel, with automatic deployments triggered by pushes to the connected production branch on GitHub.

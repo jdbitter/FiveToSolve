@@ -1,0 +1,209 @@
+
+.game-container
+{
+  gap: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-board
+{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.guess-row
+{
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+.tile
+{
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--tile-border);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 3rem;
+  font-weight: bold;
+  -webkit-text-stroke: .5px white;
+  color: var(--tile-text);
+}
+
+.tile.reveal 
+{
+  animation: reveal-tile 500ms ease-in-out both;
+}
+
+@keyframes reveal-tile 
+{
+  0% 
+  {
+    transform: rotateX(0deg);
+    background-color: var(--tile-missing);
+  }
+
+  49% 
+  {
+    transform: rotateX(90deg);
+    background-color: var(--tile-missing);
+  }
+
+  50% 
+  {
+    transform: rotateX(90deg);
+  }
+
+  100% 
+  {
+    transform: rotateX(0deg);
+  }
+}
+
+.keyboard-key
+{
+  width: 35px;
+  height: 35px;
+  border: 1px solid var(--tile-border);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--tile-text);
+  --key-color: var(--tile-unused);
+  --key-color-border: var(--tile-unused-border);
+  background-color: var(--key-color);
+  border-color: var(--key-color-border);
+}
+
+.keyboard-key.key-updated
+{
+  animation: key-pop 300ms ease-in-out both;
+}
+
+@keyframes key-pop 
+{
+  0% 
+  {
+    scale: 1;
+    background-color: var(--previous-color-state);
+  }
+
+  49% 
+  {
+    scale: 0.75;
+    background-color: var(--previous-color-state);
+  }
+
+  50% 
+  {
+    scale: 0.75;
+  }
+
+  100% 
+  {
+    scale: 1;
+  }
+}
+
+.keyboard-large-key
+{
+  width: 52.5px;
+  height: 35px;
+  border: 1px solid #3a3a3c;
+  background-color: var(--tile-unused);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--tile-text);
+}
+
+.tile.correct 
+{
+  background-color: var(--tile-correct);
+  border-color: var(--tile-correct-border);
+}
+
+.tile.present 
+{
+  background-color: var(--tile-present);
+  border-color: var(--tile-present-border);
+}
+
+.tile.missing
+{
+  background-color: var(--tile-missing);
+  border-color: var(--tile-missing-border);
+}
+
+.tile.unused
+{
+  background-color: var(--tile-unused);
+  border-color: var(--tile-unused-border);
+}
+
+.keyboard
+{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.keyboard-row
+{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 4px;
+}
+
+.keyboard-key.correct
+{
+  --key-color: var(--tile-correct);
+  --key-color-border: var(--tile-correct-border);
+}
+
+.keyboard-key.present
+{
+  --key-color: var(--tile-present);
+  --key-color-border: var(--tile-present-border);
+}
+
+.keyboard-key.missing
+{
+  --key-color: var(--tile-missing);
+  --key-color-border: var(--tile-missing-border);
+}
+
+.keyboard-key.unused
+{
+  --key-color: var(--tile-unused);
+  --key-color-border: var(--tile-unused-border);
+}
+
+.game-over-overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background-color: rgb(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.game-over-panel {
+  width: min(90%, 24rem);
+  padding: 2rem;
+  text-align: center;
+  border-radius: 0.75rem;
+  background-color: rgba(63, 63, 63, 0.95);
+  color: #1a1a1a;
+}
